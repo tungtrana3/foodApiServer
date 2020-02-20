@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::prefix('food')->group(function(){
+	Route::name('food.')->group(function(){
+		Route::get('/', 'FoodController@index')->name('danh-sach');
+	});
+});
