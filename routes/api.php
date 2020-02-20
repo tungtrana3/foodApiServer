@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 */
 Route::get('food-type', 'API\foodTypeController@getListFoodType');
 Route::get('food', 'API\foodController@getListFood');
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+//Thêm món mới
+Route::post('add-food', 'API\foodController@addNewFood');
+//Sửa món ăn
+Route::post('update-food', 'API\foodController@updateFood');
